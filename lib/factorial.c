@@ -1,13 +1,19 @@
 #include <stdio.h>
 
+int factorial(int num);
+
 int main() {
-  int array[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-  int factorial = 1;
-  int i;
+    /* testing code */
+    printf("0! = %i\n", factorial(0));
+    printf("1! = %i\n", factorial(1));
+    printf("3! = %i\n", factorial(3));
+    printf("5! = %i\n", factorial(5));
+}
 
-  for (i = 0; i < 10; i++) {
-    factorial = factorial * array[i];
+int factorial(int num) {
+  if (num == 0) {
+    return 1;
+  } else {
+    return num * factorial(num - 1);
   }
-
-  printf("10! is %d.\n", factorial);
 }
